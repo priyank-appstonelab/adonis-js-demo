@@ -59,7 +59,7 @@ export default class Can {
 
     let roleIds = user.roles.map((x: { id: any }) => x.id);
     let roleIdPlaceHolder =
-      "(" + new Array(roleIds.length).fill("?").join("?") + ")";
+      "(" + new Array(roleIds.length).fill("?").join(",") + ")";
 
     let {
       0: {
@@ -75,7 +75,7 @@ export default class Can {
         " AND `p`.`name` in " +
         rolePlaceHolder +
         " LIMIT 1",
-      [roleIds, ...permissionNames]
+      [...roleIds, ...permissionNames]
     );
     if (!permissionCount) {
       let {
