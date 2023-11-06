@@ -1,0 +1,12 @@
+{
+  "include": ["*.ts"],
+  "exclude": ["node_modules/"],
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "isolatedModules": true,
+    "noEmit": true
+  }
+}
